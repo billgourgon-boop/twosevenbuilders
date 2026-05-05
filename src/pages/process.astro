@@ -1,0 +1,150 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Process. Two Seven Builders" description="How a Two Seven home gets built. Pre-construction, construction, post-construction." active="process">
+  <section class="page-hero">
+    <div class="hero-bg" style="background-image:url('/images/truss-day.webp')"></div>
+    <div class="hero-content">
+      <span class="eyebrow fade-up">Process</span>
+      <h1 class="serif fade-up d-1" style="margin-top:18px;">How it goes,<br /><em>start to finish.</em></h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap-narrow reveal">
+      <p style="font-size:clamp(20px, 1.6vw, 26px); line-height:1.45; max-width:54ch;">
+        Three phases. The same team across all of them. No handoffs to people who weren't in the room when the decisions were made.
+      </p>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <article class="phase fade-up">
+      <div>
+        <span class="ph-num">Phase 01</span>
+        <h3 class="serif">Pre-Construction</h3>
+        <p class="muted" style="margin-top:24px;">Most build problems start in the drawings. We treat pre-construction as the most important six months of the project.</p>
+      </div>
+      <ul>
+        <li>Site evaluation: soils, drainage, solar, sightlines, tree-clearing strategy</li>
+        <li>Design collaboration with your architect, or a referral to one of ours</li>
+        <li>Construction document review: every detail vetted before tender</li>
+        <li>Permit coordination with the municipality and conservation authority</li>
+        <li>Budget development with line-item transparency, not lump-sum guesses</li>
+        <li>Schedule built backwards from your move-in date, contingency baked in</li>
+        <li>Trade selection: every sub interviewed and bid on real drawings</li>
+      </ul>
+    </article>
+
+    <article class="phase fade-up">
+      <div>
+        <span class="ph-num">Phase 02</span>
+        <h3 class="serif">Construction</h3>
+        <p class="muted" style="margin-top:24px;">The phase everyone else calls "the build." For us it's the easy part, because we've already done the hard thinking.</p>
+      </div>
+      <ul>
+        <li>Full trades coordination with one site superintendent on the ground every day</li>
+        <li>Material procurement on a long lead-time schedule: no waiting on windows in February</li>
+        <li>Weekly client updates with photos, schedule status, and a running budget</li>
+        <li>Site supervision from foundation pour to final clean: same supervisor, same crew</li>
+        <li>Quality control checkpoints at framing, envelope, rough-in, and finish</li>
+        <li>Blower-door tests before drywall, mid-build, and at handoff</li>
+        <li>Document-controlled change orders: nothing gets built off a verbal</li>
+      </ul>
+    </article>
+
+    <article class="phase fade-up">
+      <div>
+        <span class="ph-num">Phase 03</span>
+        <h3 class="serif">Post-Construction</h3>
+        <p class="muted" style="margin-top:24px;">A house is a system. Systems need tending. We don't disappear at handoff. We plan the next decade with you.</p>
+      </div>
+      <ul>
+        <li>Final walkthrough with full system orientation: every valve, every breaker, every filter</li>
+        <li>Deficiency list maintained until every item is closed, with photo documentation</li>
+        <li>One-year follow-up walkthrough: seasonal settling, calibration, fine-tuning</li>
+        <li>Lifetime maintenance support: call us in year ten and the same person picks up</li>
+        <li>Close-out package: warranties, manuals, as-built drawings, supplier list</li>
+        <li>Annual envelope inspection available on retainer</li>
+      </ul>
+    </article>
+  </section>
+
+  <section class="bone">
+    <div class="pull-quote reveal">
+      <h2 class="serif">"The client is the builder.<br />We make sure that means something."</h2>
+      <div class="who">.  Daniel Kavanagh, Founder</div>
+    </div>
+  </section>
+
+  <section class="bleed-photo">
+    <img
+      src="/images/house-framed-with-windows.webp"
+      alt="Build site"
+      data-parallax="0.18"
+      style="width:100%; height:120%; object-fit:cover; display:block; position:absolute; inset:-10% 0;"
+    />
+  </section>
+
+  <section class="section">
+    <div class="wrap-narrow reveal" style="text-align:center;">
+      <span class="eyebrow">Ready when you are</span>
+      <h2 class="serif" style="margin:24px 0 36px;">Talk to us before<br />you talk to anyone else.</h2>
+      <a href="/contact" class="btn">Start the Process <span class="arrow">→</span></a>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .bleed-photo {
+    position: relative;
+    height: clamp(420px, 70vh, 760px);
+    overflow: hidden;
+  }
+  .phase {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: clamp(32px, 5vw, 80px);
+    padding: clamp(60px, 7vw, 120px) 0;
+    border-top: 1px solid var(--rule);
+  }
+  .phase:last-child { border-bottom: 1px solid var(--rule); }
+  .phase .ph-num {
+    font-family: var(--sans);
+    font-size: 12px;
+    letter-spacing: 0.28em;
+    color: var(--grey-4);
+  }
+  .phase h3 { margin: 16px 0 0; }
+  .phase ul { counter-reset: phase-bullet; }
+  .phase ul li {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--rule);
+    display: flex;
+    gap: 24px;
+    font-size: 17px;
+  }
+  .phase ul li::before {
+    content: counter(phase-bullet, decimal-leading-zero);
+    counter-increment: phase-bullet;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    color: var(--grey-4);
+    font-family: var(--sans);
+  }
+
+  .pull-quote { text-align: center; padding: clamp(80px, 12vw, 180px) var(--gut); }
+  .pull-quote h2 { max-width: 18ch; margin: 0 auto; }
+  .pull-quote .who {
+    margin-top: 36px;
+    font-size: 12px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--grey-3);
+  }
+
+  @media (max-width: 1024px) {
+    .phase { grid-template-columns: 1fr; }
+  }
+</style>

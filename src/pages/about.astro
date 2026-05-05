@@ -1,0 +1,150 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="About. Two Seven Builders" description="Built by the few, for the few. Founding story, services, team, and careers." active="about">
+  <section class="page-hero">
+    <div class="hero-bg" style="background-image:url('/images/luxury-shop.webp')"></div>
+    <div class="hero-content">
+      <span class="eyebrow fade-up">About</span>
+      <h1 class="serif fade-up d-1" style="margin-top:18px;">Built by the few,<br /><em>for the few.</em></h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="split">
+        <div class="fade-left">
+          <span class="eyebrow">The Studio</span>
+          <h2 class="serif split-text" style="margin-top:18px; max-width:14ch;">A builder's company, run by builders.</h2>
+        </div>
+        <div class="story fade-right d-1">
+          <p>Two Seven was founded on a simple idea: the people drawing the plans, signing the contracts, and walking the site should be the same people. No layers. No translation losses.</p>
+          <p>We work west of Ottawa, deep in the Valley, country where the Shield meets the river, where winters demand more from a wall assembly than any code book describes, and where every neighbour knows whose house leaks. <strong>Valley builders have always had to do it right because there's no one to call back.</strong> That's not a marketing line. That's the math.</p>
+          <p>Over the past decade we've built homes for clients who care less about square footage and more about whether the floor is still flat in fifty years. We take on a small number of projects a year. We finish what we start. We answer the phone after the keys are handed over.</p>
+          <p>Quality over volume isn't a tagline here. It's the reason the company exists.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="section bone">
+    <div class="wrap">
+      <div class="fade-up" style="max-width:760px;">
+        <span class="eyebrow">Services · 002</span>
+        <h2 class="serif split-text" style="margin-top:18px;">What we do.</h2>
+        <p class="muted" style="margin-top:24px; max-width:54ch;">A focused offering. We do these things and we do them properly. We turn down work that falls outside this list.</p>
+      </div>
+
+      <div class="svc-list reveal-stagger">
+        <div class="svc-row">
+          <span class="num">01</span>
+          <span class="name serif">Custom Builds</span>
+          <p>Ground-up custom homes on private lots throughout Renfrew, Lanark, and the Madawaska Valley. From contemporary to traditional, timber to ICF.</p>
+        </div>
+        <div class="svc-row">
+          <span class="num">02</span>
+          <span class="name serif">Project Management</span>
+          <p>Acting as the single point of accountability between architect, engineer, trades, and owner. One throat to choke, as the saying goes.</p>
+        </div>
+        <div class="svc-row">
+          <span class="num">03</span>
+          <span class="name serif">Preliminary Design</span>
+          <p>Site evaluation, massing studies, and feasibility before you commit to an architect. We help you understand what the land will allow.</p>
+        </div>
+        <div class="svc-row">
+          <span class="num">04</span>
+          <span class="name serif">Construction Documents</span>
+          <p>Tender-ready document sets developed in lockstep with your design team. The drawings are detailed enough that the trades don't have to guess.</p>
+        </div>
+        <div class="svc-row">
+          <span class="num">05</span>
+          <span class="name serif">High Performance Consulting</span>
+          <p>Envelope detailing, mechanical strategy, blower-door coordination, for clients who want their build to outperform the code minimum by a wide margin.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="team" class="section">
+    <div class="wrap">
+      <div class="fade-up" style="max-width:780px;">
+        <span class="eyebrow">Team · 003</span>
+        <h2 class="serif split-text" style="margin-top:18px;">Few hands. Long memory.</h2>
+        <p class="muted" style="margin-top:24px; max-width:54ch;">The same people who quote the work do the work. The same people who do the work answer the phone three years later.</p>
+      </div>
+
+      <div class="team-roster">
+        <div class="member fade-up">
+          <div class="member-photo" style="background-image:url('/images/owner-lifting-beam.webp')"></div>
+          <h4 class="serif">Daniel Kavanagh</h4>
+          <div class="role">Founder · Lead Builder</div>
+          <p>Born in the Valley, fourth-generation builder. Spent fifteen years on framing crews and ten more running his own jobs before founding Two Seven. Cares more about how a wall assembly performs than how a brochure looks.</p>
+        </div>
+        <div class="member fade-up">
+          <div class="member-photo" style="background-image:url('/images/worker-at-sawhorse.webp')"></div>
+          <h4 class="serif">Owen Pritchard</h4>
+          <div class="role">Site Superintendent</div>
+          <p>On site every day. The person the trades trust, the person the inspector calls, the person who notices the half-degree difference in a sill plate before it becomes a problem in fifty years.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="careers" class="section bone">
+    <div class="wrap">
+      <div class="split">
+        <div class="reveal">
+          <span class="eyebrow">Careers · 004</span>
+          <h2 class="serif" style="margin-top:18px;">We hire people who care.</h2>
+        </div>
+        <div class="reveal">
+          <p class="muted">Tools can be taught. Care can't. We're always interested in carpenters, finishers, and project leads who give a damn about the work after the cheque clears.</p>
+          <p class="muted" style="margin-top:18px;">If that sounds like you, send a note and tell us what you've built.</p>
+          <a href="mailto:careers@twosevenbuilders.ca" class="btn btn-dark" style="margin-top:32px;">careers@twosevenbuilders.ca <span class="arrow">→</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .story p { color: var(--grey-4); font-size: clamp(16px, 1.2vw, 19px); margin-bottom: 1.2em; }
+  .story p strong { color: var(--bone); font-weight: 400; }
+
+  .svc-list { border-top: 1px solid var(--rule-dark); margin-top: 56px; }
+  .svc-row {
+    display: grid;
+    grid-template-columns: 80px 1fr 2fr;
+    gap: 24px;
+    padding: 28px 0;
+    border-bottom: 1px solid var(--rule-dark);
+    align-items: baseline;
+  }
+  .svc-row .num { color: var(--grey-3); font-size: 12px; letter-spacing: 0.22em; }
+  .svc-row .name { font-family: var(--serif); font-size: clamp(22px, 2.2vw, 34px); }
+  .svc-row p { color: var(--grey-3); font-size: 16px; }
+
+  .team-roster {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: clamp(40px, 5vw, 80px) clamp(28px, 4vw, 56px);
+    margin-top: 64px;
+  }
+  .member-photo { aspect-ratio: 4/5; background-size: cover; background-position: center; filter: grayscale(0.3); margin-bottom: 24px; }
+  .member h4 { margin-bottom: 6px; }
+  .member .role {
+    font-size: 12px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--grey-4);
+    margin-bottom: 16px;
+  }
+  .member p { color: var(--grey-4); font-size: 16px; }
+
+  @media (max-width: 1024px) {
+    .split { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 760px) {
+    .team-roster { grid-template-columns: 1fr; }
+    .svc-row { grid-template-columns: 1fr; gap: 8px; }
+  }
+</style>

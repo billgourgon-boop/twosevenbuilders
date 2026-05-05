@@ -1,0 +1,153 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Contact. Two Seven Builders" description="Start the conversation. We take on a limited number of projects each year." active="contact">
+  <section style="padding:clamp(140px, 16vw, 220px) 0 clamp(40px, 6vw, 80px);">
+    <div class="wrap">
+      <div style="border-bottom:1px solid var(--rule); padding-bottom:32px; max-width:1100px;">
+        <span class="eyebrow fade-up">Contact</span>
+        <h1 class="serif fade-up d-1" style="margin-top:18px;">Start the<br /><em>conversation.</em></h1>
+        <p class="muted fade-up d-2" style="margin-top:32px; max-width:54ch; font-size:clamp(17px, 1.3vw, 21px);">
+          We take on a limited number of projects each year. If you're serious about building right, let's talk. If you're shopping a contract on price alone, we likely aren't the fit, and we'll tell you that too.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <div class="contact-grid">
+      <form id="contactForm" class="reveal" novalidate>
+        <div class="form-grid">
+          <div class="form-row">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" required />
+          </div>
+          <div class="form-row">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required />
+          </div>
+        </div>
+
+        <div class="form-grid">
+          <div class="form-row">
+            <label for="phone">Phone</label>
+            <input id="phone" name="phone" type="tel" />
+          </div>
+          <div class="form-row">
+            <label for="ptype">Project Type</label>
+            <select id="ptype" name="ptype">
+              <option>New Build</option>
+              <option>Renovation</option>
+              <option>Consultation</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <label for="message">Tell us about the project</label>
+          <textarea id="message" name="message" rows="5" placeholder="Site, budget range, timeline, what you've already figured out, what you haven't."></textarea>
+        </div>
+
+        <div style="display:flex; align-items:center; gap:32px; margin-top:8px;">
+          <button type="submit" class="btn">Send <span class="arrow">→</span></button>
+          <span id="formStatus" class="muted" style="font-size:14px;"></span>
+        </div>
+      </form>
+
+      <aside class="contact-side reveal">
+        <div>
+          <h5>Direct</h5>
+          <div class="big serif">(613) 555-0127</div>
+          <div class="big serif" style="margin-top:6px;"><a href="mailto:info@twosevenbuilders.ca">info@twosevenbuilders.ca</a></div>
+        </div>
+
+        <div>
+          <h5>Studio</h5>
+          <p class="muted">27 Riverside Lane<br />Renfrew County, ON<br />K7V 0A0</p>
+          <p class="muted" style="margin-top:8px; font-size:13px; letter-spacing:0.18em; text-transform:uppercase;">By appointment only</p>
+        </div>
+
+        <div>
+          <h5>Service Area</h5>
+          <p class="muted">Renfrew County · Lanark Highlands · Madawaska Valley · Ottawa West</p>
+        </div>
+
+        <div style="margin-top:48px; padding-top:32px; border-top:1px solid var(--rule);">
+          <h5 style="margin-top:0;">Book a Consultation</h5>
+          <p class="muted" style="margin-bottom:24px;">Pre-construction planning, project scoping, or a budget reality check. Sixty minutes, no obligation.</p>
+          <a href="mailto:info@twosevenbuilders.ca?subject=Consultation" class="btn">Book a Call <span class="arrow">→</span></a>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section style="padding:clamp(80px, 10vw, 140px) 0 0;">
+    <img src="/images/shop-in-fall.webp" alt="The Two Seven shop in fall" style="width:100%; aspect-ratio:21/9; object-fit:cover; display:block; filter:grayscale(0.15);" />
+  </section>
+</Layout>
+
+<style>
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: clamp(40px, 6vw, 96px);
+    padding: clamp(60px, 8vw, 120px) 0;
+  }
+  .form-row { display: flex; flex-direction: column; margin-bottom: 28px; }
+  .form-row label {
+    font-size: 11px; letter-spacing: 0.28em;
+    text-transform: uppercase; color: var(--grey-4);
+    margin-bottom: 10px;
+  }
+  .form-row input,
+  .form-row select,
+  .form-row textarea {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--rule);
+    padding: 12px 0;
+    color: var(--bone);
+    font-family: var(--sans);
+    font-size: 17px;
+    letter-spacing: 0.01em;
+    outline: none;
+    transition: border-color 0.3s var(--ease);
+  }
+  .form-row input:focus,
+  .form-row select:focus,
+  .form-row textarea:focus { border-color: var(--bone); }
+  .form-row select { appearance: none; cursor: pointer; }
+  .form-row textarea { resize: vertical; min-height: 140px; }
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+  .contact-side {
+    border-left: 1px solid var(--rule);
+    padding-left: clamp(28px, 4vw, 56px);
+  }
+  .contact-side h5 {
+    font-family: var(--sans);
+    font-weight: 400;
+    font-size: 11px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--grey-4);
+    margin: 36px 0 12px;
+  }
+  .contact-side .big {
+    font-family: var(--serif);
+    font-size: clamp(22px, 2vw, 28px);
+  }
+
+  @media (max-width: 1024px) {
+    .contact-grid { grid-template-columns: 1fr; }
+    .contact-side {
+      border-left: none;
+      border-top: 1px solid var(--rule);
+      padding-left: 0;
+      padding-top: 32px;
+    }
+  }
+  @media (max-width: 760px) {
+    .form-grid { grid-template-columns: 1fr; }
+  }
+</style>

@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Get-ChildItem -Recurse -File | Where-Object { $_.FullName -notmatch 'node_modules' } | Select-Object FullName, Length | Format-Table -AutoSize)",
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(where cwebp *)",
+      "Bash(where magick *)",
+      "Bash(where ffmpeg *)",
+      "Bash(node -e \"try { require.resolve\\('sharp'\\); console.log\\('sharp: yes'\\); } catch { console.log\\('sharp: no'\\); }\")",
+      "Bash(node scripts/convert-images.mjs)",
+      "Bash(node scripts/rename-images.mjs)",
+      "Bash(taskkill //F //IM node.exe)",
+      "Bash(git init *)",
+      "PowerShell(Rename-Item *)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git branch *)"
+    ]
+  }
+}

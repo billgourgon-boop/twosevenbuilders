@@ -1,0 +1,125 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="High Performance. Two Seven Builders"
+  description="A home that performs as well as it looks. Air barriers, thermal envelope, mechanical, windows, structure, water."
+  active="high-performance"
+>
+  <section class="hero" style="height:90vh;">
+    <div class="hero-bg" style="background-image:url('/images/efficient-home.webp')"></div>
+    <div class="hero-content">
+      <span class="eyebrow fade-up">High Performance</span>
+      <h1 class="serif fade-up d-1" style="margin-top:18px;">A home that performs as well<br />as <em>it looks.</em></h1>
+      <p class="hero-sub fade-up d-3" style="margin-top:32px;">Built to last. Built to breathe. Built for the Valley.</p>
+    </div>
+    <div class="hero-scroll">Scroll</div>
+  </section>
+
+  <section class="section">
+    <div class="wrap-narrow">
+      <div class="reveal">
+        <span class="eyebrow">What we mean by performance</span>
+        <h2 class="serif" style="margin:24px 0 36px;">There is no premium for<br />doing it right the first time.</h2>
+        <p class="muted" style="font-size:clamp(18px, 1.4vw, 22px); line-height:1.55;">
+          High performance isn't a label you slap on a brochure. It's a quiet set of decisions made at the foundation, in the wall assembly, and behind the drywall. The homeowner never sees them, but feels them every single winter. The absence of drafts. The absence of squeaks. The absence of a $12,000 heating bill. Ottawa Valley winters don't negotiate. We build accordingly.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <div class="hp-row reveal">
+      <div class="hp-text">
+        <span class="num">01. Air Barriers</span>
+        <h3 class="serif">Make it tight. Then make it breathe.</h3>
+        <p>Continuous air barrier systems, taped, sealed, and tested, that eliminate drafts, moisture intrusion, and energy loss. We blower-door test before drywall, not just at handoff, because finding a leak in February is finding it too late.</p>
+      </div>
+      <div class="hp-img" data-parallax="0.08" style="background-image:url('/images/attention-to-detail.webp')"></div>
+    </div>
+
+    <div class="hp-row reveal">
+      <div class="hp-text">
+        <span class="num">02. Thermal Envelope</span>
+        <h3 class="serif">Beyond code. Always.</h3>
+        <p>Insulation strategies that go well past minimum code: dense-pack cellulose, exterior rigid, thermal-break detailing at every connection. We design the envelope as a continuous skin, not a stack of products bought at separate suppliers.</p>
+      </div>
+      <div class="hp-img" data-parallax="0.08" style="background-image:url('/images/attention-to-detail-2.webp')"></div>
+    </div>
+
+    <div class="hp-row reveal">
+      <div class="hp-text">
+        <span class="num">03. Mechanical Systems</span>
+        <h3 class="serif">Quiet, efficient, redundant.</h3>
+        <p>HRV/ERV ventilation, in-floor radiant, mini-splits, high-efficiency heating, sized and zoned for an Ottawa Valley climate that swings from −35°C to +32°C in a calendar year. The bones of a comfortable house are the systems you can't see.</p>
+      </div>
+      <div class="hp-img" data-parallax="0.08" style="background-image:url('/images/clean-site-inside-house.webp')"></div>
+    </div>
+
+    <div class="hp-row reveal">
+      <div class="hp-text">
+        <span class="num">04. Windows &amp; Doors</span>
+        <h3 class="serif">Triple pane is the floor, not the ceiling.</h3>
+        <p>Triple-pane glazing, thermally broken frames, properly flashed openings. No cold spots on the glass. No condensation streaks on the sill in January. We spec windows like they matter, because in this climate, they're half the building.</p>
+      </div>
+      <div class="hp-img" data-parallax="0.08" style="background-image:url('/images/framed-with-windows.webp')"></div>
+    </div>
+
+    <div class="hp-row reveal">
+      <div class="hp-text">
+        <span class="num">05. Structural Integrity</span>
+        <h3 class="serif">No squeaks. Ever.</h3>
+        <p>Engineered floor systems, proper fastening schedules, glued and screwed sub-floors, and a refusal to let any framing crew get away with "good enough." A floor that creaks in year three was a floor that was wrong in year one. We get the bones right.</p>
+      </div>
+      <div class="hp-img" data-parallax="0.08" style="background-image:url('/images/truss-day.webp')"></div>
+    </div>
+
+    <div class="hp-row reveal">
+      <div class="hp-text">
+        <span class="num">06. Water Management</span>
+        <h3 class="serif">Moisture never wins.</h3>
+        <p>Drainage planes behind the cladding, proper flashing at every penetration, foundation waterproofing detailed for clay soils and freeze-thaw cycles. Water is the enemy of every building that has ever failed. We treat it that way.</p>
+      </div>
+      <div class="hp-img" data-parallax="0.08" style="background-image:url('/images/foundation-pre-build.webp')"></div>
+    </div>
+  </section>
+
+  <section class="section bone" style="margin-top:80px;">
+    <div class="wrap-narrow reveal" style="text-align:center;">
+      <span class="eyebrow">Closing the loop</span>
+      <h2 class="serif" style="margin:24px 0 24px;">Ask us what high performance<br />means for your build.</h2>
+      <p class="muted" style="max-width:50ch; margin:0 auto 36px;">Every site is different. Every client weighs the trade-offs differently. The conversation is free, useful, and short.</p>
+      <a href="/contact" class="btn btn-dark">Start the Conversation <span class="arrow">→</span></a>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .hp-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(32px, 5vw, 80px);
+    padding: clamp(60px, 7vw, 120px) 0;
+    border-top: 1px solid var(--rule);
+    align-items: center;
+  }
+  .hp-row:nth-child(even) .hp-text { order: 2; }
+  .hp-row:nth-child(even) .hp-img { order: 1; }
+  .hp-row .hp-img { aspect-ratio: 4/3; background-size: cover; background-position: center; }
+  .hp-row h3 { margin-bottom: 24px; }
+  .hp-row p { color: var(--grey-4); }
+  .hp-row .num {
+    font-family: var(--sans);
+    font-size: 12px; letter-spacing: 0.28em;
+    color: var(--grey-4);
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  @media (max-width: 1024px) {
+    .hp-row { grid-template-columns: 1fr; }
+    .hp-row:nth-child(even) .hp-text { order: 0; }
+    .hp-row:nth-child(even) .hp-img { order: 0; }
+  }
+</style>

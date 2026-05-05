@@ -1,0 +1,839 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Two Seven Builders. Luxury Custom Home Design-Build · Ottawa Valley"
+  description="Two Seven Builders is a design-build firm crafting high-performance luxury custom homes across the Ottawa Valley. Ottawa, Renfrew County, Lanark Highlands, Calabogie, Pembroke and Madawaska Valley. Built once. Built to be kept."
+  intro={true}
+>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg" style="background-image:url('/images/luxury-shop.webp')"></div>
+    <div class="hero-overlay"></div>
+
+    <span class="hero-tag">Est. Ottawa Valley</span>
+
+    <div class="hero-headline-wrap">
+      <h1 class="hero-headline serif">Designed by Us. Built by Us. <em>Made for You.</em></h1>
+      <p class="hero-sub">Custom carpentry and in-house design team for homeowners who want it done right the first time.</p>
+      <a href="/contact" class="btn">Start the Process <span class="arrow">→</span></a>
+    </div>
+
+    <div class="hero-scroll">Scroll</div>
+  </section>
+
+  <!-- SCROLLYTELLING. sticky image, panels swap it as they scroll past -->
+  <section class="scrolly">
+    <div class="scrolly-stage">
+      <div class="scrolly-image-wrap">
+        <div class="scrolly-image active" data-i="0" style="background-image:url('/images/foundation-pre-build.webp')"></div>
+        <div class="scrolly-image"        data-i="1" style="background-image:url('/images/truss-day.webp')"></div>
+        <div class="scrolly-image"        data-i="2" style="background-image:url('/images/mid-build-beautiful-day.webp')"></div>
+        <div class="scrolly-image"        data-i="3" style="background-image:url('/images/finished-house-night-drop.webp')"></div>
+        <div class="scrolly-progress">
+          <span data-i="0">01</span>
+          <span data-i="1">02</span>
+          <span data-i="2">03</span>
+          <span data-i="3">04</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="scrolly-panels">
+      <article class="scrolly-panel" data-i="0">
+        <span class="eyebrow">01. Below Grade</span>
+        <h3 class="serif">Where every quiet house begins.</h3>
+        <p class="muted">
+          Drainage, waterproofing, footing depth. All decided long before anyone notices the kitchen. The Valley's clay and freeze-thaw demand more than the code minimum, so we give it more.
+        </p>
+      </article>
+
+      <article class="scrolly-panel" data-i="1">
+        <span class="eyebrow">02. Above Grade</span>
+        <h3 class="serif">The bones, set true.</h3>
+        <p class="muted">
+          Engineered floors, sealed sub-floors, trusses raised on a clear morning. Every fastener placed on a schedule, every plate checked. A house that won't squeak in year forty.
+        </p>
+      </article>
+
+      <article class="scrolly-panel" data-i="2">
+        <span class="eyebrow">03. Envelope</span>
+        <h3 class="serif">Tight. Then breathing.</h3>
+        <p class="muted">
+          Continuous air barrier, dense-pack cellulose, exterior rigid, a window package that won't surrender on a January morning. Tested before drywall, not just at handoff.
+        </p>
+      </article>
+
+      <article class="scrolly-panel" data-i="3">
+        <span class="eyebrow">04. Move-In</span>
+        <h3 class="serif">A home that performs as well as it looks.</h3>
+        <p class="muted">
+          Lights on. Quiet. Warm. The work disappears into the walls, exactly as it should. We hand over a house that will outlast everyone who built it.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <!-- HORIZONTAL SCRUB STATEMENT -->
+  <section class="scrub-statement">
+    <h2 class="serif" data-x="-220">
+      Patience.<span class="muted">&nbsp;&nbsp;Precision.</span>&nbsp;&nbsp;Memory.
+    </h2>
+  </section>
+
+  <!-- RECENT WORK. image gallery -->
+  <section class="section">
+    <div class="wrap">
+      <div class="works-head">
+        <div class="fade-up">
+          <span class="eyebrow">Recent Work · 001</span>
+          <h2 class="serif split-text" style="margin-top:18px;">From the Valley.</h2>
+        </div>
+      </div>
+
+      <div class="works-grid">
+        <figure class="work fade-left">
+          <div class="work-image">
+            <img src="/images/front-house-done.webp" alt="Finished custom home in Renfrew County" data-parallax="0.06" />
+          </div>
+        </figure>
+        <figure class="work fade-right d-1">
+          <div class="work-image">
+            <img src="/images/efficient-home.webp" alt="High performance custom home, Madawaska Valley" data-parallax="0.08" />
+          </div>
+        </figure>
+        <figure class="work fade-left d-2">
+          <div class="work-image">
+            <img src="/images/framed-with-windows.webp" alt="Framed home with new windows" data-parallax="0.05" />
+          </div>
+        </figure>
+        <figure class="work fade-right d-3">
+          <div class="work-image">
+            <img src="/images/house-framed-with-windows.webp" alt="House framed and weather sealed" data-parallax="0.09" />
+          </div>
+        </figure>
+        <figure class="work fade-left d-4">
+          <div class="work-image">
+            <img src="/images/mid-build-beautiful-day.webp" alt="Mid build, summer site" data-parallax="0.07" />
+          </div>
+        </figure>
+        <figure class="work fade-right d-5">
+          <div class="work-image">
+            <img src="/images/finished-house-night-drop.webp" alt="Finished house at dusk" data-parallax="0.08" />
+          </div>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- HORIZONTAL PIN STRIP. vertical scroll moves the track sideways -->
+  <section class="h-strip">
+    <div class="h-strip-pin">
+      <div class="h-strip-head">
+        <span class="eyebrow">In the seams · 002.5</span>
+        <h3 class="serif">The work nobody photographs.</h3>
+      </div>
+      <div class="h-strip-track">
+        <figure class="h-strip-card">
+          <img src="/images/attention-to-detail.webp" alt="Joinery detail" />
+          <figcaption><span class="num">01</span><span>Joinery, hand-trimmed</span></figcaption>
+        </figure>
+        <figure class="h-strip-card">
+          <img src="/images/clean-site-inside-house.webp" alt="Clean interior framing" />
+          <figcaption><span class="num">02</span><span>Inside framing, mid-build</span></figcaption>
+        </figure>
+        <figure class="h-strip-card">
+          <img src="/images/inside-gazebo.webp" alt="Pavilion interior" />
+          <figcaption><span class="num">03</span><span>Pavilion, finished</span></figcaption>
+        </figure>
+        <figure class="h-strip-card">
+          <img src="/images/backyard-gazebo.webp" alt="Backyard gazebo exterior" />
+          <figcaption><span class="num">04</span><span>Outbuilding · Lanark</span></figcaption>
+        </figure>
+        <figure class="h-strip-card">
+          <img src="/images/shop-in-fall.webp" alt="The shop in fall" />
+          <figcaption><span class="num">05</span><span>The shop · October</span></figcaption>
+        </figure>
+      </div>
+      <div class="h-strip-progress"><span></span></div>
+    </div>
+  </section>
+
+  <!-- ABOUT TEASER -->
+  <section class="section bone">
+    <div class="wrap">
+      <div class="split-asym">
+        <div class="quote-block fade-left">
+          <span class="eyebrow">About · 002</span>
+          <h2 class="serif split-text" style="margin-top:24px;">Here, every home is built to be remembered.</h2>
+          <p class="muted" style="max-width:46ch; margin-bottom:36px;">
+            For over a decade, we've delivered demanding visions through uncompromising attention to structure, detail, and craft. West of Ottawa, deep in the Valley, we build the way the land demands: with patience, precision, and a long memory.
+          </p>
+          <a href="/about" class="link-line">About us →</a>
+        </div>
+        <div class="craft-stack">
+          <img src="/images/owner-lifting-beam.webp" alt="On the floor, lifting a beam" class="clip-up" data-parallax="0.12" />
+          <img src="/images/attention-to-detail-3.webp" alt="Detail close-up" class="clip-up d-2" data-parallax="0.18" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STICKY / PINNED PROCESS SECTION -->
+  <section class="pin-process">
+    <div class="wrap">
+      <div class="pin-inner">
+        <aside class="pin-left">
+          <span class="eyebrow">Process · 003</span>
+          <h2 class="serif split-text" style="margin-top:18px;">Build with purpose</h2>
+          <p class="muted" style="margin-top:24px; max-width:36ch;">
+            Three phases. The same team across all of them. No handoffs to people who weren't in the room when the decisions were made.
+          </p>
+          <a href="/process" class="link-line" style="margin-top:32px;">Our process →</a>
+        </aside>
+
+        <div class="pin-right">
+          <article class="pin-step fade-up">
+            <span class="num">01. Pre-Construction</span>
+            <h3 class="serif">Listen first. Draw second.</h3>
+            <p class="muted">Design listening, collaborator engagement, budgets and timelines, full construction documents. All vetted before a single board is cut.</p>
+          </article>
+          <article class="pin-step fade-up">
+            <span class="num">02. Construction</span>
+            <h3 class="serif">Coordinated, on site, every day.</h3>
+            <p class="muted">Start-to-finish coordination, material sourcing, trades management, and the kind of precision craftsmanship Valley clients expect.</p>
+          </article>
+          <article class="pin-step fade-up">
+            <span class="num">03. Post-Construction</span>
+            <h3 class="serif">After the keys are handed over.</h3>
+            <p class="muted">Final walkthrough, deficiency resolution, and lifetime support. We don't disappear when the dumpster leaves the driveway.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HORIZONTAL SCRUB STATEMENT (II) -->
+  <section class="scrub-statement">
+    <h2 class="serif" data-x="-260">
+      Cut once.<span class="muted">&nbsp;&nbsp;Set true.</span>&nbsp;&nbsp;<em>Built right.</em>
+    </h2>
+  </section>
+
+  <!-- PINNED SCENE. image sticks while text scrolls past -->
+  <section class="pinned-scene">
+    <div class="pin-bg" style="background-image:url('/images/build-under-progress.webp')"></div>
+    <div class="pin-content">
+      <div class="pin-line">
+        <span class="eyebrow fade-up">Standard</span>
+        <h2 class="serif fade-up d-1">No squeaks. No callbacks.<br /><em>No compromises.</em></h2>
+      </div>
+      <div class="pin-line">
+        <span class="eyebrow fade-up">Practice</span>
+        <h2 class="serif fade-up d-1">Tested twice<br />before the drywall closes.</h2>
+      </div>
+      <div class="pin-line">
+        <span class="eyebrow fade-up">Promise</span>
+        <h2 class="serif fade-up d-1">A house that outlives<br /><em>the people who built it.</em></h2>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONSULTATIONS -->
+  <section class="section-tight">
+    <div class="wrap">
+      <div class="consult-card fade-up">
+        <div>
+          <span class="eyebrow">Consultations</span>
+          <h3 class="serif split-text" style="margin-top:18px;">Access expert advice before you commit.</h3>
+          <p class="muted" style="margin-top:18px; max-width:36ch;">
+            Not every conversation needs to end in a contract. Sometimes you just need someone who has built the thing before to tell you straight.
+          </p>
+          <a href="/contact" class="btn" style="margin-top:32px;">Book a Call <span class="arrow">→</span></a>
+        </div>
+        <ul class="reveal-stagger">
+          <li><span>Pre-construction planning</span><span>60 min</span></li>
+          <li><span>Project scoping</span><span>90 min</span></li>
+          <li><span>Budget reality check</span><span>60 min</span></li>
+          <li><span>Monthly retainer option</span><span>Ongoing</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM TEASER -->
+  <section class="section bone">
+    <div class="wrap">
+      <div class="fade-left" style="max-width:780px;">
+        <span class="eyebrow">Team · 004</span>
+        <h2 class="serif split-text" style="margin-top:24px;">A small team. Total ownership.</h2>
+        <p class="muted" style="margin-top:24px; max-width:50ch;">
+          We build a limited number of homes each year. Every project gets our full attention, from the first site walk to the last punch-list item.
+        </p>
+        <a href="/about#team" class="link-line btn-dark" style="margin-top:36px; border-color:var(--black); color:var(--black); padding-bottom:4px;">Meet the team →</a>
+      </div>
+
+      <div class="team-grid">
+        <div class="team-photo clip-up" style="background-image:url('/images/worker-at-sawhorse.webp')" data-parallax="0.10"></div>
+        <div class="team-photo clip-up d-2" style="background-image:url('/images/attention-to-detail-2.webp')" data-parallax="0.16"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCROLLYTELLING (II). methods/standards, sticky image swaps with panels -->
+  <section class="scrolly">
+    <div class="scrolly-stage">
+      <div class="scrolly-image-wrap">
+        <div class="scrolly-image active" data-i="m0" style="background-image:url('/images/worker-at-sawhorse.webp')"></div>
+        <div class="scrolly-image"        data-i="m1" style="background-image:url('/images/build-under-progress.webp')"></div>
+        <div class="scrolly-image"        data-i="m2" style="background-image:url('/images/attention-to-detail-3.webp')"></div>
+        <div class="scrolly-progress">
+          <span data-i="m0">01</span>
+          <span data-i="m1">02</span>
+          <span data-i="m2">03</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="scrolly-panels">
+      <article class="scrolly-panel" data-i="m0">
+        <span class="eyebrow">01. Site</span>
+        <h3 class="serif">We walk it before we draw it.</h3>
+        <p class="muted">
+          Every parcel speaks first. Slope, sun, wind, water: all noted weeks before a sketch. The house gets built the way the land asks for it.
+        </p>
+      </article>
+
+      <article class="scrolly-panel" data-i="m1">
+        <span class="eyebrow">02. Trades</span>
+        <h3 class="serif">The same crew, every day.</h3>
+        <p class="muted">
+          No revolving door of subs. Our trades are people we've worked with for a decade, answering to one foreman from the foundation pour to the final walkthrough.
+        </p>
+      </article>
+
+      <article class="scrolly-panel" data-i="m2">
+        <span class="eyebrow">03. Standard</span>
+        <h3 class="serif">Tested. Documented. Owned.</h3>
+        <p class="muted">
+          Every blower-door, every thermal scan, every change order is recorded. You leave with a binder thicker than the warranty. The house is yours forever; the proof should be too.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <!-- HORIZONTAL SCRUB STATEMENT (III) -->
+  <section class="scrub-statement">
+    <h2 class="serif" data-x="-220">
+      Quiet.<span class="muted">&nbsp;&nbsp;Square.</span>&nbsp;&nbsp;<em>Sealed.</em>
+    </h2>
+  </section>
+
+  <!-- FLOATING PHOTO CLUSTER with serif quote -->
+  <section class="cluster">
+    <div class="cluster-stage">
+      <img class="cluster-photo cp-1" src="/images/luxury-shop.webp" alt="" data-parallax="0.06" />
+      <img class="cluster-photo cp-2" src="/images/finished-house-night-drop.webp" alt="" data-parallax="0.18" />
+      <img class="cluster-photo cp-3" src="/images/truss-day.webp" alt="" data-parallax="0.10" />
+      <div class="cluster-caption fade-up">
+        <span class="eyebrow">Memory · 005.5</span>
+        <h2 class="serif">A long view of every joint we leave behind.</h2>
+      </div>
+    </div>
+  </section>
+
+  <!-- DETAIL GALLERY. quiet close-ups of the work -->
+  <section class="section">
+    <div class="wrap">
+      <div class="works-head">
+        <div class="fade-up">
+          <span class="eyebrow">Details · 006</span>
+          <h2 class="serif split-text" style="margin-top:18px;">In the seams.</h2>
+        </div>
+      </div>
+
+      <div class="works-grid">
+        <figure class="work fade-left">
+          <div class="work-image">
+            <img src="/images/attention-to-detail.webp" alt="Hand trimmed joinery detail" data-parallax="0.06" />
+          </div>
+        </figure>
+        <figure class="work fade-right d-1">
+          <div class="work-image">
+            <img src="/images/attention-to-detail-2.webp" alt="Close up of finish carpentry" data-parallax="0.08" />
+          </div>
+        </figure>
+        <figure class="work fade-left d-2">
+          <div class="work-image">
+            <img src="/images/attention-to-detail-3.webp" alt="Material selection and detail" data-parallax="0.05" />
+          </div>
+        </figure>
+        <figure class="work fade-right d-3">
+          <div class="work-image">
+            <img src="/images/clean-site-inside-house.webp" alt="Clean job site inside a framed house" data-parallax="0.09" />
+          </div>
+        </figure>
+        <figure class="work fade-left d-4">
+          <div class="work-image">
+            <img src="/images/inside-gazebo.webp" alt="Pavilion interior, finished" data-parallax="0.07" />
+          </div>
+        </figure>
+        <figure class="work fade-right d-5">
+          <div class="work-image">
+            <img src="/images/luxury-shop.webp" alt="Custom outbuilding, evening" data-parallax="0.08" />
+          </div>
+        </figure>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* ---------- Hero with image bg + big logo ---------- */
+  .hero { position: relative; }
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background:
+      linear-gradient(90deg, rgba(0,0,0,0.50) 0%, rgba(0,0,0,0.22) 38%, rgba(0,0,0,0) 68%),
+      linear-gradient(180deg, rgba(0,0,0,0.12) 0%, rgba(0,0,0,0) 35%, rgba(0,0,0,0.32) 100%);
+  }
+  .hero-tag, .hero-scroll { z-index: 4; }
+
+  /* ---------- Hero: smaller headline + sub, left-aligned ---------- */
+  .hero-headline-wrap {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: left;
+    padding: 0 clamp(28px, 6vw, 96px);
+    gap: clamp(16px, 1.6vw, 26px);
+  }
+  .hero-headline {
+    font-size: clamp(36px, 5.4vw, 88px);
+    line-height: 1.02;
+    letter-spacing: -0.018em;
+    color: var(--bone);
+    max-width: 18ch;
+    font-weight: 300;
+    margin: 0;
+    text-shadow: 0 2px 28px rgba(0,0,0,0.55), 0 1px 3px rgba(0,0,0,0.40);
+  }
+  .hero-headline em { font-style: italic; }
+  .hero-sub {
+    font-family: var(--sans);
+    font-size: clamp(14px, 1.15vw, 18px);
+    line-height: 1.55;
+    font-weight: 300;
+    color: var(--bone);
+    opacity: 0.92;
+    max-width: 52ch;
+    margin: 0;
+    text-shadow: 0 1px 18px rgba(0,0,0,0.55), 0 1px 2px rgba(0,0,0,0.4);
+  }
+  /* ---------- Scrollytelling: sticky image / scrolling panels ---------- */
+  .scrolly {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+  .scrolly-stage { position: relative; }
+  .scrolly-image-wrap {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow: hidden;
+  }
+  .scrolly-image {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transform: scale(1.08);
+    transition: opacity 1s var(--ease), transform 1.6s var(--ease);
+    filter: grayscale(0.1) brightness(0.92);
+  }
+  .scrolly-image.active {
+    opacity: 1;
+    transform: scale(1);
+  }
+  .scrolly-image::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(120deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0) 40%, rgba(0,0,0,0.5) 100%);
+    pointer-events: none;
+  }
+  .scrolly-progress {
+    position: absolute;
+    bottom: 32px; left: 32px;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-family: var(--sans);
+    font-size: 10px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+  }
+  .scrolly-progress span {
+    color: var(--grey-3);
+    transition: color 0.5s var(--ease), padding-left 0.5s var(--ease);
+    padding-left: 0;
+  }
+  .scrolly-progress span.is-active {
+    color: var(--bone);
+    padding-left: 12px;
+  }
+
+  .scrolly-panels {
+    display: flex;
+    flex-direction: column;
+  }
+  .scrolly-panel {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: clamp(60px, 8vw, 120px) clamp(40px, 6vw, 96px);
+    border-top: 1px solid var(--rule);
+  }
+  .scrolly-panel:first-child { border-top: none; }
+  .scrolly-panel .eyebrow { margin-bottom: 24px; }
+  .scrolly-panel h3 {
+    margin-bottom: 28px;
+    max-width: 14ch;
+  }
+  .scrolly-panel p { max-width: 44ch; font-size: clamp(15px, 1.05vw, 17px); }
+
+  @media (max-width: 900px) {
+    .scrolly { grid-template-columns: 1fr; }
+    .scrolly-stage { order: 0; }
+    .scrolly-image-wrap {
+      position: relative;
+      height: 70vh;
+    }
+    .scrolly-panel { min-height: auto; padding: 60px var(--gut); }
+  }
+
+  /* ---------- Horizontal scrub statement ---------- */
+  .scrub-statement {
+    padding: clamp(80px, 12vw, 160px) 0;
+    overflow: hidden;
+  }
+  .scrub-statement h2 {
+    font-size: clamp(56px, 11vw, 180px);
+    white-space: nowrap;
+    padding-left: 50%;
+    will-change: transform;
+  }
+  .scrub-statement h2 .muted { color: var(--grey-3); }
+
+  /* ---------- Horizontal pin-strip (vertical scroll → horizontal track) ---------- */
+  .h-strip { position: relative; height: 360vh; }
+  .h-strip-pin {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+  .h-strip-head {
+    position: absolute;
+    top: 12vh;
+    left: var(--gut);
+    right: var(--gut);
+    z-index: 3;
+    max-width: 38ch;
+  }
+  .h-strip-head h3 {
+    margin-top: 18px;
+    font-size: clamp(28px, 4vw, 60px);
+    line-height: 1.06;
+  }
+  .h-strip-track {
+    display: flex;
+    gap: clamp(20px, 3vw, 40px);
+    padding: 0 var(--gut);
+    align-items: center;
+    will-change: transform;
+  }
+  .h-strip-card {
+    flex: 0 0 auto;
+    width: clamp(320px, 48vw, 640px);
+  }
+  .h-strip-card img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    filter: grayscale(0.12) brightness(0.95);
+    transition: filter 0.6s var(--ease);
+  }
+  .h-strip-card:hover img { filter: grayscale(0) brightness(1); }
+  .h-strip-card figcaption {
+    display: flex;
+    gap: 16px;
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px solid var(--rule);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--grey-4);
+  }
+  .h-strip-card .num { color: var(--bone); }
+  .h-strip-progress {
+    position: absolute;
+    bottom: 6vh; left: var(--gut); right: var(--gut);
+    height: 1px;
+    background: var(--rule);
+    z-index: 2;
+  }
+  .h-strip-progress span {
+    display: block;
+    height: 100%;
+    width: 0%;
+    background: var(--bone);
+    transition: width 0.05s linear;
+  }
+
+  /* ---------- Floating photo cluster ---------- */
+  .cluster {
+    padding: clamp(80px, 12vw, 180px) 0;
+    overflow: hidden;
+  }
+  .cluster-stage {
+    position: relative;
+    height: 110vh;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0 var(--gut);
+  }
+  .cluster-photo {
+    position: absolute;
+    object-fit: cover;
+    filter: grayscale(0.12);
+    will-change: transform;
+  }
+  .cp-1 { top: 0;     left: 4%;  width: 38%; aspect-ratio: 3/4; }
+  .cp-2 { top: 18%;   right: 4%; width: 44%; aspect-ratio: 4/3; }
+  .cp-3 { bottom: 4%; left: 22%; width: 36%; aspect-ratio: 5/4; }
+  .cluster-caption {
+    position: absolute;
+    bottom: 30%;
+    right: 6%;
+    z-index: 2;
+    max-width: 30ch;
+    text-align: right;
+  }
+  .cluster-caption h2 {
+    font-size: clamp(36px, 4.5vw, 72px);
+    margin-top: 16px;
+    line-height: 1.08;
+  }
+
+  @media (max-width: 900px) {
+    .h-strip { height: auto; }
+    .h-strip-pin {
+      position: static;
+      height: auto;
+      flex-direction: column;
+      padding: 60px var(--gut);
+    }
+    .h-strip-head { position: relative; top: auto; left: auto; right: auto; margin-bottom: 32px; max-width: none; }
+    .h-strip-track { flex-direction: column; transform: none !important; padding: 0; }
+    .h-strip-card { width: 100%; }
+    .h-strip-progress { display: none; }
+
+    .cluster-stage { height: auto; padding-top: 0; }
+    .cluster-photo { position: relative; width: 100%; margin-bottom: 16px; aspect-ratio: 4/3; }
+    .cp-1, .cp-2, .cp-3 { top: auto; bottom: auto; left: auto; right: auto; }
+    .cluster-caption { position: relative; bottom: auto; right: auto; text-align: left; max-width: none; padding: 24px 0; }
+  }
+
+  /* ---------- Selected Works ---------- */
+  .works-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-bottom: clamp(40px, 5vw, 72px);
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 24px;
+  }
+  .works-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: clamp(24px, 4vw, 56px) clamp(24px, 4vw, 48px);
+  }
+  .work { position: relative; display: block; overflow: hidden; }
+  .work-image { position: relative; aspect-ratio: 4 / 5; overflow: hidden; background: var(--grey-1); }
+  .work-image img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform 1s var(--ease), filter 1s var(--ease);
+    filter: brightness(0.85);
+  }
+  .work:hover .work-image img { transform: scale(1.04); filter: brightness(1); }
+  .work-meta {
+    display: flex; justify-content: space-between; align-items: baseline;
+    margin-top: 18px;
+    border-top: 1px solid var(--rule);
+    padding-top: 14px;
+  }
+  .work-meta .name { font-family: var(--serif); font-size: clamp(22px, 2vw, 32px); }
+  .work-meta .tag { font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--grey-4); }
+  .work:nth-child(even) { transform: translateY(48px); }
+
+  /* ---------- About teaser ---------- */
+  .quote-block h2 { max-width: 14ch; margin-bottom: clamp(28px, 3vw, 44px); }
+  .craft-stack { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .craft-stack img:first-child { grid-column: 1 / 2; margin-top: 64px; aspect-ratio: 3/4; object-fit: cover; }
+  .craft-stack img:last-child { grid-column: 2 / 3; aspect-ratio: 3/4; object-fit: cover; }
+
+  /* ---------- Sticky/pinned process section ---------- */
+  .pin-process { padding: clamp(80px, 12vw, 160px) 0; }
+  .pin-inner {
+    display: grid;
+    grid-template-columns: 5fr 7fr;
+    gap: clamp(40px, 6vw, 96px);
+    align-items: start;
+  }
+  .pin-left { position: sticky; top: 18vh; }
+  .pin-right { display: flex; flex-direction: column; gap: clamp(48px, 8vw, 120px); }
+  .pin-step {
+    border-top: 1px solid var(--rule);
+    padding-top: clamp(28px, 3vw, 44px);
+  }
+  .pin-step .num {
+    display: block;
+    font-family: var(--sans);
+    font-size: 12px;
+    letter-spacing: 0.28em;
+    color: var(--grey-4);
+    margin-bottom: 16px;
+  }
+  .pin-step h3 { margin-bottom: 18px; }
+  .pin-step p { max-width: 50ch; }
+
+  /* ---------- Pinned scene: image stays, text scrolls past ---------- */
+  .pinned-scene {
+    position: relative;
+  }
+  .pin-bg {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: grayscale(0.12);
+    z-index: 1;
+  }
+  .pin-bg::after {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse at 50% 50%, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.55) 70%),
+      linear-gradient(180deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.25) 50%, rgba(0,0,0,0.55) 100%);
+  }
+  .pin-content {
+    position: relative;
+    z-index: 2;
+    margin-top: -100vh;
+  }
+  .pin-line {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 var(--gut);
+    gap: clamp(20px, 2.5vw, 32px);
+  }
+  .pin-line .eyebrow {
+    color: var(--bone);
+    opacity: 0.75;
+    letter-spacing: 0.36em;
+  }
+  .pin-line h2 {
+    color: var(--bone);
+    max-width: 22ch;
+    font-size: clamp(40px, 7vw, 116px);
+    line-height: 1.05;
+    text-shadow: 0 4px 40px rgba(0, 0, 0, 0.45);
+    font-weight: 300;
+  }
+  .pin-line h2 em { font-style: italic; }
+
+  /* ---------- Consultations ---------- */
+  .consult-card {
+    border: 1px solid var(--rule);
+    padding: clamp(36px, 5vw, 72px);
+    display: grid;
+    grid-template-columns: 5fr 7fr;
+    gap: clamp(28px, 4vw, 64px);
+    align-items: center;
+  }
+  .consult-card ul { counter-reset: consult; }
+  .consult-card ul li {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--rule);
+    font-size: 16px;
+    display: flex; justify-content: space-between;
+    color: var(--bone);
+  }
+  .consult-card ul li::before {
+    content: counter(consult, decimal-leading-zero);
+    counter-increment: consult;
+    color: var(--grey-4);
+    margin-right: 24px;
+    font-size: 12px; letter-spacing: 0.2em;
+  }
+
+  /* ---------- Team ---------- */
+  .team-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 56px; }
+  .team-photo { aspect-ratio: 3/4; background-size: cover; background-position: center; filter: grayscale(0.2); }
+
+  /* ---------- Perspectives preview ---------- */
+  .persp-list { border-top: 1px solid var(--rule); }
+  .persp-row {
+    display: grid;
+    grid-template-columns: 80px 1fr auto;
+    gap: 32px;
+    align-items: center;
+    padding: clamp(20px, 2.5vw, 32px) 0;
+    border-bottom: 1px solid var(--rule);
+    transition: padding-left 0.5s var(--ease), color 0.4s var(--ease);
+  }
+  .persp-row:hover { padding-left: 24px; }
+  .persp-row .num { color: var(--grey-4); font-size: 12px; letter-spacing: 0.2em; }
+  .persp-row .title { font-family: var(--serif); font-size: clamp(22px, 2.4vw, 36px); }
+  .persp-row .arrow { font-size: 14px; letter-spacing: 0.2em; color: var(--grey-4); }
+  .persp-row:hover .arrow { color: var(--bone); }
+
+  @media (max-width: 1024px) {
+    .pin-inner { grid-template-columns: 1fr; }
+    .pin-left { position: static; }
+    .consult-card { grid-template-columns: 1fr; }
+    .split-asym { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 760px) {
+    .works-grid, .team-grid { grid-template-columns: 1fr; }
+    .work:nth-child(even) { transform: none; }
+    .persp-row { grid-template-columns: 40px 1fr auto; gap: 16px; }
+    .craft-stack img:first-child { margin-top: 0; }
+    .scrub-statement h2 { font-size: clamp(44px, 14vw, 88px); }
+    .hero-logo-mark { width: clamp(200px, 60vw, 320px); transform: translate(-50%, -55%); }
+  }
+</style>
