@@ -79,17 +79,12 @@ const locations = [
   <body class={intro ? 'intro-active' : ''}>
     {intro && (
       <div class="intro" aria-hidden="true">
-        <video id="introVideo" class="intro-video" autoplay muted playsinline preload="auto" poster="/videos/hero-last-frame.jpg">
-          <source src="/videos/hero-intro.webm" type="video/webm" />
-          <source src="/videos/hero-intro.mp4" type="video/mp4" />
-        </video>
-        <div class="intro-veil"></div>
         <div class="intro-brand">
           <img src="/images/logo.png" alt="" class="intro-logo-big" />
           <span class="intro-kicker-big">
-            <a href="/design">Design</a>
+            <a href="/design" class="ik-word ik-left">Design</a>
             <span class="intro-kicker-sep">+</span>
-            <a href="/build">Build</a>
+            <a href="/build" class="ik-word ik-right">Build</a>
           </span>
         </div>
       </div>
@@ -118,6 +113,10 @@ const locations = [
     </aside>
 
     <div class="nav-overlay">
+      <button class="nav-overlay-close" aria-label="Close menu" type="button">
+        <span class="nav-overlay-close-label">Close</span>
+        <span class="nav-overlay-close-icon" aria-hidden="true"><span></span><span></span></span>
+      </button>
       <div class="nav-overlay-links">
         {links.map((l) => (<a href={l.href}>{l.label}</a>))}
       </div>
@@ -205,28 +204,21 @@ const locations = [
         z-index: 200;
         background: var(--black);
         overflow: hidden;
-        /* Fade during the zoom (intro-finishing) so hero is revealed under the wipe */
+        /* Soft vignette draws the eye to the center stage */
         transition:
-          opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.55s,
-          visibility 0s linear 1.25s;
+          opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+          visibility 0s linear 0.7s;
       }
-      html.intro-finishing .intro {
+      .intro::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(ellipse at 50% 50%, rgba(255,255,255,0.04) 0%, rgba(0,0,0,0) 55%);
+        pointer-events: none;
+      }
+      html.intro-done .intro {
         opacity: 0;
         visibility: hidden;
-      }
-      .intro-video {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        pointer-events: none;
-      }
-      .intro-veil {
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(180deg, rgba(0,0,0,0.10) 0%, rgba(0,0,0,0) 45%, rgba(0,0,0,0.20) 100%);
-        pointer-events: none;
       }
       .intro-brand {
         position: absolute;
@@ -301,24 +293,43 @@ const locations = [
       }
       .intro-kicker-big a:hover::after { opacity: 0.7; }
       .intro-kicker-big .intro-kicker-sep { opacity: 0.55; }
-      /* Phase 2: zoom + split. logo zooms past the screen, Design exits left, Build exits right */
-      html.intro-finishing .intro-logo-big {
-        transform: scale(11);
-        opacity: 0;
-      }
+      /* Phase 2: SPLIT-ZOOM. words fly toward the logo and scale up while fading. */
+      html.intro-finishing .intro-kicker-big a.ik-left,
       html.intro-finishing .intro-kicker-big a:first-of-type {
-        transform: translateX(-65vw);
+        transform: translate(0.7em, -2.2em) scale(1.55);
         opacity: 0;
+        transition:
+          transform 0.85s cubic-bezier(0.7, 0, 0.25, 1),
+          opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.1s;
       }
+      html.intro-finishing .intro-kicker-big a.ik-right,
       html.intro-finishing .intro-kicker-big a:last-of-type {
-        transform: translateX(65vw);
+        transform: translate(-0.7em, -2.2em) scale(1.55);
         opacity: 0;
+        transition:
+          transform 0.85s cubic-bezier(0.7, 0, 0.25, 1),
+          opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.1s;
       }
       html.intro-finishing .intro-kicker-big .intro-kicker-sep {
-        transform: scale(0.4);
+        transform: translateY(-2.2em) scale(0.3);
         opacity: 0;
+        transition:
+          transform 0.7s cubic-bezier(0.55, 0, 0.45, 1),
+          opacity 0.45s ease;
       }
-      /* Phase 3: intro is gone. block clicks on its leftover layer */
+      /* Logo pulses larger as it absorbs the words */
+      html.intro-finishing .intro-logo-big {
+        transform: scale(1.12);
+        transition: transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+      }
+      /* Phase 3 (intro-done): logo expands further while overlay fades — handoff to hero */
+      html.intro-done .intro-logo-big {
+        transform: scale(1.9);
+        opacity: 0;
+        transition:
+          transform 0.95s cubic-bezier(0.5, 0, 0.5, 1),
+          opacity 0.55s ease 0.2s;
+      }
       html.intro-done .intro {
         pointer-events: none;
       }
@@ -627,6 +638,50 @@ const locations = [
       body.menu-open .nav-overlay-links a:nth-child(4) { transition-delay: 0.30s; }
       body.menu-open .nav-overlay-links a:nth-child(5) { transition-delay: 0.35s; }
       body.menu-open .nav-overlay-links a:nth-child(6) { transition-delay: 0.40s; }
+      .nav-overlay-close {
+        position: absolute;
+        top: 28px;
+        right: var(--gut);
+        z-index: 90;
+        display: inline-flex;
+        align-items: center;
+        gap: 14px;
+        padding: 10px 4px;
+        background: transparent;
+        border: 0;
+        cursor: pointer;
+        color: var(--bone);
+        font-family: var(--sans);
+        font-size: 11px;
+        letter-spacing: 0.32em;
+        text-transform: uppercase;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.35s var(--ease);
+      }
+      body.menu-open .nav-overlay-close { opacity: 1; pointer-events: auto; transition-delay: 0.25s; }
+      .nav-overlay-close-label { opacity: 0.85; }
+      .nav-overlay-close:hover .nav-overlay-close-label { opacity: 1; }
+      .nav-overlay-close-icon {
+        position: relative;
+        width: 18px;
+        height: 18px;
+        display: inline-block;
+      }
+      .nav-overlay-close-icon span {
+        position: absolute;
+        left: 0; top: 50%;
+        width: 100%;
+        height: 1px;
+        background: var(--bone);
+        transition: background 0.2s var(--ease);
+      }
+      .nav-overlay-close-icon span:nth-child(1) { transform: rotate(45deg); }
+      .nav-overlay-close-icon span:nth-child(2) { transform: rotate(-45deg); }
+      @media (max-width: 760px) {
+        .nav-overlay-close-label { display: none; }
+      }
+
       .nav-overlay-meta {
         position: absolute;
         bottom: 32px; left: var(--gut); right: var(--gut);
@@ -698,41 +753,21 @@ const locations = [
     <script is:inline src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
 
     <script>
-      // ---------- Intro animation (homepage only): video → logo fly-up → hero ----------
+      // ---------- Intro animation (homepage only): black → logo + kicker → split-zoom → handoff ----------
       const root = document.documentElement;
       if (root.classList.contains('has-intro') && !root.classList.contains('intro-skip')) {
+        // Phase 1: entrance — logo + kicker fade up out of the black
         requestAnimationFrame(() => root.classList.add('intro-loaded'));
-        const FLY_UP_MS = 1100;  /* zoom completes ~1.2s, hero copy starts revealing as the last bit fades */
-        const HANDOFF_MS = 500;
-        const startFlyUp = () => {
-          if (root.classList.contains('intro-finishing')) return;
-          root.classList.add('intro-finishing');
-          setTimeout(() => root.classList.add('intro-done'), FLY_UP_MS);
-          setTimeout(() => root.classList.add('intro-finished'), FLY_UP_MS + HANDOFF_MS);
-        };
-        const introVid = document.getElementById('introVideo') as HTMLVideoElement | null;
-        if (introVid) {
-          // Start the zoom well before the video ends so the motion is one continuous gesture
-          // (video keeps playing underneath while the logo zooms out. no pause, no hold beat).
-          const ZOOM_LEAD_S = 1.3;
-          const onTimeUpdate = () => {
-            const dur = introVid.duration;
-            if (dur && isFinite(dur) && introVid.currentTime >= dur - ZOOM_LEAD_S) {
-              introVid.removeEventListener('timeupdate', onTimeUpdate);
-              startFlyUp();
-            }
-          };
-          introVid.addEventListener('timeupdate', onTimeUpdate);
-          // Backstop: if `ended` fires before timeupdate caught it, still trigger the zoom
-          introVid.addEventListener('ended', () => {
-            startFlyUp();
-          }, { once: true });
-          introVid.play().catch(() => {});
-          // Safety fallback if autoplay is blocked or video stalls
-          setTimeout(startFlyUp, 4200);
-        } else {
-          setTimeout(startFlyUp, 2400);
-        }
+        const HOLD_MS    = 1500;  /* read time before split-zoom kicks off */
+        const ZOOM_MS    = 800;   /* split-zoom phase: words converge on logo */
+        const HANDOFF_MS = 700;   /* logo grows + overlay fades */
+
+        // Phase 2: split-zoom toward the logo
+        setTimeout(() => root.classList.add('intro-finishing'), HOLD_MS);
+        // Phase 3: logo pulse complete — grow + handoff to hero (overlay fades)
+        setTimeout(() => root.classList.add('intro-done'),       HOLD_MS + ZOOM_MS);
+        // Cleanup: enable scroll, allow input
+        setTimeout(() => root.classList.add('intro-finished'),   HOLD_MS + ZOOM_MS + HANDOFF_MS);
       }
 
       // ---------- Smooth scroll (Lenis) ----------
@@ -853,6 +888,8 @@ const locations = [
       // ---------- Menu toggle (one button, all viewports) ----------
       const menuBtn = document.querySelector('.nav-menu');
       menuBtn?.addEventListener('click', () => document.body.classList.toggle('menu-open'));
+      const menuCloseBtn = document.querySelector('.nav-overlay-close');
+      menuCloseBtn?.addEventListener('click', () => document.body.classList.remove('menu-open'));
       document.querySelectorAll('.nav-overlay-links a').forEach((a) => {
         a.addEventListener('click', () => document.body.classList.remove('menu-open'));
       });

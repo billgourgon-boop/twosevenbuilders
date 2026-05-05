@@ -15,7 +15,14 @@
       "PowerShell(Rename-Item *)",
       "Bash(git add *)",
       "Bash(git commit *)",
-      "Bash(git branch *)"
+      "Bash(git branch *)",
+      "Bash(git config *)",
+      "Bash(git remote *)",
+      "Bash(git push *)",
+      "Bash(taskkill //F //IM git.exe)",
+      "Bash(taskkill //F //IM git-credential-manager.exe)",
+      "Bash(curl -s http://localhost:4321/)",
+      "Bash(npx vercel *)"
     ]
   }
 }
