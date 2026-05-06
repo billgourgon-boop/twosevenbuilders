@@ -24,18 +24,28 @@ const links = [
 ];
 
 const locations = [
-  'Ottawa',
-  'Kanata',
-  'Carleton Place',
-  'Almonte',
-  'Arnprior',
-  'Renfrew',
-  'Calabogie',
-  'Eganville',
-  'Pembroke',
-  "Barry's Bay",
-  'Madawaska Valley',
-  'Lanark Highlands'
+  { name: 'Ottawa',           slug: 'ottawa' },
+  { name: 'Kanata',           slug: 'kanata' },
+  { name: 'Stittsville',      slug: 'stittsville' },
+  { name: 'Carp',             slug: 'carp' },
+  { name: 'Richmond',         slug: 'richmond' },
+  { name: 'Manotick',         slug: 'manotick' },
+  { name: 'Greely',           slug: 'greely' },
+  { name: 'Carleton Place',   slug: 'carleton-place' },
+  { name: 'Almonte',          slug: 'almonte' },
+  { name: 'Pakenham',         slug: 'pakenham' },
+  { name: 'White Lake',       slug: 'white-lake' },
+  { name: 'Arnprior',         slug: 'arnprior' },
+  { name: 'Renfrew',          slug: 'renfrew' },
+  { name: 'Calabogie',        slug: 'calabogie' },
+  { name: 'Eganville',        slug: 'eganville' },
+  { name: 'Cobden',           slug: 'cobden' },
+  { name: 'Pembroke',         slug: 'pembroke' },
+  { name: 'Petawawa',         slug: 'petawawa' },
+  { name: "Barry's Bay",      slug: 'barrys-bay' },
+  { name: 'Madawaska Valley', slug: 'madawaska-valley' },
+  { name: 'Lanark Highlands', slug: 'lanark-highlands' },
+  { name: 'Smiths Falls',     slug: 'smiths-falls' }
 ];
 ---
 
@@ -166,23 +176,25 @@ const locations = [
         <div class="footer-col footer-col-locations" aria-label="Service area">
           <h5>Service area</h5>
           <ul>
-            {locations.map((city) => (<li>{city}</li>))}
+            {locations.map((loc) => (
+              <li><a href={`/custom-homes/${loc.slug}`}>{loc.name}</a></li>
+            ))}
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <span>© Two Seven Builders 2025</span>
+        <div class="fb-left">
+          <img src="/images/logo.png" alt="Two Seven Builders" class="fb-logo" />
+          <span class="fb-copy">© Two Seven Builders 2025. All rights reserved.</span>
+        </div>
         <div class="socials">
           <a href="#">Instagram</a>
           <a href="#">Houzz</a>
           <a href="#">LinkedIn</a>
         </div>
-        <span>Site v1.0</span>
-      </div>
-
-      <div class="footer-credit">
         <a class="thorwell-credit" href="https://thorwellgroup.com" target="_blank" rel="noopener">
-          <span class="tw-line">Built by <span class="tw-name">Thor<span class="tw-mint">w</span>ell Group Inc<span class="tw-mint">.</span></span></span>
+          <span class="tw-prefix">Designed &amp; hosted by:</span>
+          <span class="tw-name">Thor<span class="tw-mint">w</span>ell Group Inc<span class="tw-mint">.</span></span>
           <span class="tw-tag">Building the future.</span>
         </a>
       </div>
@@ -799,59 +811,78 @@ const locations = [
       .footer-col ul li { padding: 6px 0; }
       .footer-col ul li a:hover { opacity: 0.6; }
       .footer-bottom {
-        display: flex; justify-content: space-between; align-items: center;
-        padding-top: 28px;
-        font-size: 11px; letter-spacing: 0.22em;
-        text-transform: uppercase; color: var(--grey-4);
-      }
-      .footer-bottom .socials { display: flex; gap: 20px; }
-
-      /* ---------- Thorwell Group credit (bottom of every page) ---------- */
-      .footer-credit {
         display: flex;
-        justify-content: center;
-        margin-top: 32px;
+        justify-content: space-between;
+        align-items: center;
+        gap: 24px;
         padding-top: 28px;
-        border-top: 1px solid var(--rule);
+        flex-wrap: wrap;
+        color: var(--grey-4);
       }
+      .footer-bottom .socials {
+        display: flex;
+        gap: 20px;
+        font-size: 11px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+      }
+
+      /* Footer-bottom LEFT — Two Seven mark + copyright */
+      .fb-left {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+      .fb-logo {
+        height: 28px;
+        width: auto;
+        filter: brightness(0) invert(1);
+        opacity: 0.9;
+      }
+      .fb-copy {
+        font-family: var(--sans);
+        font-size: 11px;
+        font-weight: 300;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      /* Footer-bottom RIGHT — Thorwell Group credit (no border, mixed case) */
       .thorwell-credit {
         display: inline-flex;
         flex-direction: column;
-        align-items: center;
-        gap: 6px;
-        padding: 14px 26px;
-        border: 1px solid var(--rule);
-        border-radius: 2px;
+        align-items: flex-end;
+        gap: 3px;
+        padding: 0;
+        border: none;
+        background: none;
         font-family: 'Raleway', 'Inter', sans-serif;
-        text-align: center;
+        text-align: right;
         text-decoration: none;
         color: var(--grey-4);
-        transition: border-color 0.4s var(--ease), color 0.4s var(--ease), background 0.4s var(--ease);
+        transition: color 0.3s var(--ease);
       }
-      .thorwell-credit:hover {
-        border-color: var(--bone);
-        color: var(--bone);
-        background: rgba(255, 255, 255, 0.02);
-      }
-      .thorwell-credit .tw-line {
-        font-size: 12px;
+      .thorwell-credit:hover { color: var(--bone); }
+      .thorwell-credit .tw-prefix {
+        font-size: 10px;
         font-weight: 300;
-        letter-spacing: 0.14em;
+        letter-spacing: 0.22em;
         text-transform: uppercase;
+        opacity: 0.7;
       }
       .thorwell-credit .tw-name {
+        font-size: 15px;
         font-weight: 500;
         color: var(--bone);
-        letter-spacing: 0.18em;
+        letter-spacing: 0.01em;
       }
       .thorwell-credit .tw-mint { color: #CBFBC4; }
       .thorwell-credit .tw-tag {
-        font-size: 10px;
+        font-size: 11px;
         font-weight: 300;
-        letter-spacing: 0.32em;
-        text-transform: uppercase;
-        opacity: 0.65;
         font-style: italic;
+        letter-spacing: 0.04em;
+        opacity: 0.7;
       }
 
       @media (max-width: 1280px) {

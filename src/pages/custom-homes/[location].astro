@@ -1,0 +1,111 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const locations = [
+    { name: 'Ottawa',           slug: 'ottawa' },
+    { name: 'Kanata',           slug: 'kanata' },
+    { name: 'Stittsville',      slug: 'stittsville' },
+    { name: 'Carp',             slug: 'carp' },
+    { name: 'Richmond',         slug: 'richmond' },
+    { name: 'Manotick',         slug: 'manotick' },
+    { name: 'Greely',           slug: 'greely' },
+    { name: 'Carleton Place',   slug: 'carleton-place' },
+    { name: 'Almonte',          slug: 'almonte' },
+    { name: 'Pakenham',         slug: 'pakenham' },
+    { name: 'White Lake',       slug: 'white-lake' },
+    { name: 'Arnprior',         slug: 'arnprior' },
+    { name: 'Renfrew',          slug: 'renfrew' },
+    { name: 'Calabogie',        slug: 'calabogie' },
+    { name: 'Eganville',        slug: 'eganville' },
+    { name: 'Cobden',           slug: 'cobden' },
+    { name: 'Pembroke',         slug: 'pembroke' },
+    { name: 'Petawawa',         slug: 'petawawa' },
+    { name: "Barry's Bay",      slug: 'barrys-bay' },
+    { name: 'Madawaska Valley', slug: 'madawaska-valley' },
+    { name: 'Lanark Highlands', slug: 'lanark-highlands' },
+    { name: 'Smiths Falls',     slug: 'smiths-falls' }
+  ];
+
+  return locations.map((loc) => ({
+    params: { location: loc.slug },
+    props: { name: loc.name, slug: loc.slug }
+  }));
+}
+
+const { name } = Astro.props;
+---
+
+<Layout
+  title={`Custom Home Builder in ${name} | Two Seven Builders`}
+  description={`Two Seven Builders is a design-build firm crafting high-performance luxury custom homes in ${name} and the Ottawa Valley. Custom carpentry and in-house design team for homeowners who want it done right the first time.`}
+>
+  <section class="hero" style="height:90vh;">
+    <div class="hero-bg" style="background-image:url('/images/luxury-shop.webp')"></div>
+    <div class="hero-content">
+      <span class="eyebrow fade-up">Service Area</span>
+      <h1 class="serif fade-up d-1" style="margin-top:18px;">Custom homes in<br /><em>{name}.</em></h1>
+      <p class="hero-sub fade-up d-3" style="margin-top:32px;">Design-build for high-performance luxury custom homes across {name} and the surrounding Ottawa Valley.</p>
+    </div>
+    <div class="hero-scroll">Scroll</div>
+  </section>
+
+  <section class="section">
+    <div class="wrap-narrow">
+      <div class="reveal">
+        <span class="eyebrow">Building in {name}</span>
+        <h2 class="serif" style="margin:24px 0 36px;">Built for the way the land<br />actually behaves here.</h2>
+        <p class="muted" style="font-size:clamp(18px, 1.4vw, 22px); line-height:1.55;">
+          Two Seven Builders is a design-build firm working {name} and the surrounding Ottawa Valley. We listen to the parcel before we draw, set the bones true, and tighten the envelope so the house performs through Valley winters without complaint. Every {name} home we deliver shares one trait: built once, built to be kept.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <div class="hp-row reveal">
+      <div class="hp-text">
+        <span class="num">01 Design</span>
+        <h3 class="serif">Listen first. Draw second.</h3>
+        <p>Our in-house design team walks every {name} parcel before sketching. Solar arc, prevailing wind, drainage, mature trees, sightlines you do not want to lose. We document the place, then the architecture follows it. The result is a home in {name} that feels inevitable, not imposed.</p>
+      </div>
+      <div class="hp-img" data-parallax="0.08" style="background-image:url('/images/foundation-pre-build.webp')"></div>
+    </div>
+
+    <div class="hp-row reveal">
+      <div class="hp-text">
+        <span class="num">02 Build</span>
+        <h3 class="serif">The same crew, every day.</h3>
+        <p>One foreman. One small trades roster. From the foundation pour to the final walkthrough, the same people are on your {name} site every day. No revolving door of subs. No translation losses between the people drawing the plans and the people swinging the hammers.</p>
+      </div>
+      <div class="hp-img" data-parallax="0.08" style="background-image:url('/images/mid-build-beautiful-day.webp')"></div>
+    </div>
+
+    <div class="hp-row reveal">
+      <div class="hp-text">
+        <span class="num">03 Performance</span>
+        <h3 class="serif">Built for {name} winters.</h3>
+        <p>Continuous air barrier, dense-pack cellulose, exterior rigid insulation, triple-pane glazing, properly flashed openings. Blower-door tested before drywall, not just at handoff. The Ottawa Valley climate around {name} swings from −35°C to +32°C in a calendar year. Our envelope is detailed for it.</p>
+      </div>
+      <div class="hp-img" data-parallax="0.08" style="background-image:url('/images/framed-with-windows.webp')"></div>
+    </div>
+
+    <div class="hp-row reveal">
+      <div class="hp-text">
+        <span class="num">04 Finish</span>
+        <h3 class="serif">Quiet finishes. Honest materials.</h3>
+        <p>Trim that meets without caulk lines. Cabinetry that closes flush in a heat wave. Stone, wood, and hardware specified for forty years rather than for a brochure photograph. We choose materials we would live with ourselves, and we will tell you when a beautiful idea will look tired in a decade.</p>
+      </div>
+      <div class="hp-img" data-parallax="0.08" style="background-image:url('/images/attention-to-detail.webp')"></div>
+    </div>
+  </section>
+
+  <section class="section bone">
+    <div class="wrap-narrow reveal" style="text-align:center;">
+      <span class="eyebrow">Start the conversation</span>
+      <h2 class="serif" style="margin:24px 0 24px;">Ready to build in {name}?</h2>
+      <p class="muted" style="max-width:54ch; margin:0 auto 36px;">We take a limited number of projects across {name} and the Ottawa Valley each year. Tell us about your land, your budget, and what you want the house to do. We will tell you straight whether we are the fit.</p>
+      <a href="/contact" class="btn btn-dark">Start the Process <span class="arrow">→</span></a>
+    </div>
+  </section>
+</Layout>

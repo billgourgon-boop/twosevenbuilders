@@ -24,7 +24,8 @@
       "Bash(curl -s http://localhost:4321/)",
       "Bash(npx vercel *)",
       "Bash(curl -s https://twoseven-builders.vercel.app/)",
-      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" https://twoseven-builders.vercel.app/)"
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" https://twoseven-builders.vercel.app/)",
+      "Bash(curl -s -o /dev/null -w '%{http_code}' https://twoseven-builders.vercel.app/custom-homes/__TRACKED_VAR__)"
     ]
   }
 }
