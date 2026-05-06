@@ -50,7 +50,7 @@ const locations = [
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,200;0,300;0,400;0,500;0,600;1,300;1,400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,200;0,300;0,400;0,500;0,600;1,300;1,400&family=Raleway:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
     <link rel="preload" as="image" href="/images/logo.png" />
@@ -178,6 +178,13 @@ const locations = [
           <a href="#">LinkedIn</a>
         </div>
         <span>Site v1.0</span>
+      </div>
+
+      <div class="footer-credit">
+        <a class="thorwell-credit" href="https://thorwellgroup.com" target="_blank" rel="noopener">
+          <span class="tw-line">Built by <span class="tw-name">Thor<span class="tw-mint">w</span>ell Group Inc<span class="tw-mint">.</span></span></span>
+          <span class="tw-tag">Building the future.</span>
+        </a>
       </div>
     </footer>
 
@@ -798,6 +805,54 @@ const locations = [
         text-transform: uppercase; color: var(--grey-4);
       }
       .footer-bottom .socials { display: flex; gap: 20px; }
+
+      /* ---------- Thorwell Group credit (bottom of every page) ---------- */
+      .footer-credit {
+        display: flex;
+        justify-content: center;
+        margin-top: 32px;
+        padding-top: 28px;
+        border-top: 1px solid var(--rule);
+      }
+      .thorwell-credit {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+        padding: 14px 26px;
+        border: 1px solid var(--rule);
+        border-radius: 2px;
+        font-family: 'Raleway', 'Inter', sans-serif;
+        text-align: center;
+        text-decoration: none;
+        color: var(--grey-4);
+        transition: border-color 0.4s var(--ease), color 0.4s var(--ease), background 0.4s var(--ease);
+      }
+      .thorwell-credit:hover {
+        border-color: var(--bone);
+        color: var(--bone);
+        background: rgba(255, 255, 255, 0.02);
+      }
+      .thorwell-credit .tw-line {
+        font-size: 12px;
+        font-weight: 300;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+      .thorwell-credit .tw-name {
+        font-weight: 500;
+        color: var(--bone);
+        letter-spacing: 0.18em;
+      }
+      .thorwell-credit .tw-mint { color: #CBFBC4; }
+      .thorwell-credit .tw-tag {
+        font-size: 10px;
+        font-weight: 300;
+        letter-spacing: 0.32em;
+        text-transform: uppercase;
+        opacity: 0.65;
+        font-style: italic;
+      }
 
       @media (max-width: 1280px) {
         .footer-top { grid-template-columns: 1.4fr 1fr 1fr 1fr; }
